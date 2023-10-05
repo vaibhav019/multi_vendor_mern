@@ -61,7 +61,7 @@ import { getAllEvents } from "./redux/actions/event";
 import axios from "axios";
 import { server } from "./server";
 import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+//import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
   const [stripeApikey, setStripeApiKey] = useState("");
@@ -81,7 +81,9 @@ function App() {
   return (
     <BrowserRouter>
       {stripeApikey && (
-        <Elements stripe={loadStripe(stripeApikey)}>
+        <Elements 
+        //stripe={loadStripe(stripeApikey)}
+        >
           <Routes>
             <Route
               path="/payment"
